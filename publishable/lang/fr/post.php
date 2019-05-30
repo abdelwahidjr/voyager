@@ -12,7 +12,7 @@ return [
     'new'              => 'Créer un nouvel article',
     'seo_content'      => 'Contenu SEO',
     'seo_title'        => 'Titre SEO',
-    'slug'             => 'URL slug',
+    'slug'             => 'Slug URL',
     'status'           => 'Statut de l\'article',
     'status_draft'     => 'brouillon',
     'status_pending'   => 'en attente',

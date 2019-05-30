@@ -198,17 +198,6 @@
                                     <p>@{{ dateFilter(selected_file.last_modified) }}</p>
                                 </span>
                             </template>
-
-                            <span v-if="fileIs(selected_file, 'image') && selected_file.thumbnails.length > 0">
-                                <h4>Thumbnails</h4><br>
-                                <ul>
-                                    <li v-for="thumbnail in selected_file.thumbnails">
-                                        <a :href="thumbnail.path" target="_blank">
-                                            @{{ thumbnail.thumb_name }}
-                                        </a>
-                                    </li>
-                                </ul>
-                            </span>
                         </div>
                     </div>
                     <div v-else class="right_none_selected">
@@ -420,13 +409,7 @@
             element: {
                 type: String,
                 default: ""
-            },
-            details: {
-                type: Object,
-                default: function() {
-                    return {};
-                }
-            },
+            }
         },
         data: function() {
             return {
@@ -455,7 +438,7 @@
             getFiles: function() {
                 var vm = this;
                 vm.is_loading = true;
-                $.post('{{ route('voyager.media.files') }}', { folder: vm.current_folder, _token: '{{ csrf_token() }}', details: vm.details }, function(data) {
+                $.post('{{ route('voyager.media.files') }}', { folder: vm.current_folder, _token: '{{ csrf_token() }}' }, function(data) {
                     vm.files = [];
                     for (var i = 0, file; file = data[i]; i++) {
                         if (vm.filter(file)) {
@@ -848,7 +831,6 @@
                         formData.append("_token", '{{ csrf_token() }}');
                         formData.append("upload_path", vm.current_folder);
                         formData.append("filename", vm.filename);
-                        formData.append("details", JSON.stringify(vm.details));
                     },
                     success: function(e, res) {
                         if (res.success) {
