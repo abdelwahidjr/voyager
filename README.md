@@ -74,7 +74,7 @@ php artisan voyager:install --with-dummy
 
 And we're all good to go!
 
-Start up a local development server with `php artisan serve` And, visit [http://localhost:8000/admin](http://localhost:8000/admin).
+Start up a local development server with `php artisan serve` And, visit [http://localhost:8000/dashboard](http://localhost:8000/admin).
 
 ## Creating an Admin User
 
