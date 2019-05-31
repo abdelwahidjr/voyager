@@ -3,23 +3,23 @@
 After running the voyager installer you will see a few new routes that have been added to your `routes/web.php` file which look like the following:
 
 ```php
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'dashboard'], function () {
     Voyager::routes();
 });
 ```
 
-This is where the Voyager routes will be rendered. You can change the `admin` prefix if you desire, or set any other route configuration you need, such as `middleware` or `domain`.
+This is where the Voyager routes will be rendered. You can change the `dashboard` prefix if you desire, or set any other route configuration you need, such as `middleware` or `domain`.
 
 When creating a new BREAD type and specifying a slug for that BREAD, you can then visit that route from the following link:
 
 ```text
-URL/admin/slug-name
+URL/dashboard/slug-name
 ```
 
 As an example, if we have a `products` table and we specified the slug to be `products`. You will now be able to visit the following URL:
 
 ```text
-URL/admin/products
+URL/dashboard/products
 ```
 
 {% hint style="info" %}
