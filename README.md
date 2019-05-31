@@ -42,9 +42,9 @@ Next make sure to create a new database and add your database credentials to you
 
 ```
 DB_HOST=localhost
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
+DB_DATABASE=db_name
+DB_USERNAME=db_username
+DB_PASSWORD=db_password
 ```
 
 You will also want to update your website URL inside of the `APP_URL` variable inside the .env file:
